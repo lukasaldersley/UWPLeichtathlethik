@@ -25,6 +25,24 @@ namespace UWPLeichtathlethik
         public MainPage()
         {
             this.InitializeComponent();
+            JahrgangsstufenComboBox.SelectionChanged += JgstGeschlechtPruefen;
+        }
+
+        private void JgstGeschlechtPruefen(object sender, SelectionChangedEventArgs e)
+        {
+            if (JahrgangsstufenComboBox.SelectedIndex > 0 && JahrgangsstufenComboBox.SelectedIndex < 7)
+            {
+                GeschlechtComboBox.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                GeschlechtComboBox.Visibility = Visibility.Collapsed;
+            }
+        }
+
+        private async void WeiterButton_Click(object sender, RoutedEventArgs e)
+        {
+            Speicherinterface.Download("https://raw.githubusercontent.com/lukasaldersley/Raumklima/master/README.md");
         }
     }
 }

@@ -7,7 +7,69 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="LightGoldenrodYellow">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!--Überschrift-->
+            <RowDefinition Height="*"/>
+            <!--Alles andere-->
+        </Grid.RowDefinitions>
 
+        <TextBox x:Name="Ueberschrift" BorderThickness="0,0,0,2" FontStyle="Italic" FontSize="20" Text="Leichtathlethik" Grid.Row="0"/>
+        <StackPanel Grid.Row="1" x:Name="MainPageStackPanel">
+            <ComboBox x:Name="JahrgangsstufenComboBox" SelectedIndex="0">
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Bitte Jgst. auswählen"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="5. Klasse"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="6. Klasse"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="7. Klasse"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="8. Klasse"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="9. Klasse"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="10. Klasse"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="11. Klasse"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="12. Klasse"/>
+            </ComboBox>
+            <ComboBox x:Name="GeschlechtComboBox" SelectedIndex="0" Visibility="Collapsed">
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Bitte Geschlecht Auswählen"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Männlich"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Weiblich"/>
+            </ComboBox>
+            <ComboBox x:Name="SportartComboBox" SelectedIndex="0">
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Bitte Sportart auswählen"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="50m"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="75m"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="100m"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="800m"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="1000m"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="3000m"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="100m Hürde"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Dauerlauf"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="12 Minutenlauf"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Weitsprung"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Hochsprung"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Wurf 80g"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Wurf 200g"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Kugelstoßen 3kg"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Kugelstoßen 4kg"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Kugelstußen 5kg"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Kugelstoßen 6kg"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Schleuderball 1kg"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Speerwurf 400g"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Speerwurf 600g"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="Speerwurf 800g"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text=""/>
+                <!--index 21==BÖSE-->
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="25m Brust"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="50m Brust"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="100m Brust"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="400m Brust"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="25m Freistil"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="50m Freistil"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="100m Freistil"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="400m Freistil"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="50m R/S"/>
+                <TextBox IsReadOnly="True" IsHitTestVisible="False" Text="100m R/S"/>
+            </ComboBox>
+            <Button x:Name="WeiterButton" Content="WEITER" Click="WeiterButton_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
