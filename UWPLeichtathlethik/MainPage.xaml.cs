@@ -40,7 +40,7 @@ namespace UWPLeichtathlethik
             }
         }
 
-        private async void WeiterButton_Click(object sender, RoutedEventArgs e)
+        private void WeiterButton_Click(object sender, RoutedEventArgs e)
         {
             Speicherinterface.Download("https://raw.githubusercontent.com/lukasaldersley/Raumklima/master/README.md");
         }
