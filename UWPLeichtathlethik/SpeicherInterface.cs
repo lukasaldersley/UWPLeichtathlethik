@@ -71,10 +71,13 @@ namespace UWPLeichtathlethik
             StorageFile sampleFile =await storageFolder.GetFileAsync(fileName);
             return await FileIO.ReadTextAsync(sampleFile);
         }
-        
-        public async Task<String> ReadFromDocuments(String fileName)
+        //@param mode "G8"/"G9"
+        public async Task<String> ReadFromDocuments(String mode, String fileName)
         {
-            ;
+            StorageFolder storageFolder=KnownFolders.DocumentsLibrary;//MUSS in XML hinzugefügt werden, im xappmanifest designer gehts nicht da der zugriff beschränkt werden soll für alle dies nicht draufhaben
+            storageFolder.Navigate("/Leichtathlethik/"+mode);//?!?
+            StorageFile sampleFile=await storageFolder.GetFileAsync(fileName);
+            return await FileIO.ReadTextAsync(sampleFile);
         }
     }
 }
