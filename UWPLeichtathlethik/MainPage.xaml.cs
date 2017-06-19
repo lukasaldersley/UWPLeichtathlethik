@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using System.Diagnostics;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -40,9 +41,10 @@ namespace UWPLeichtathlethik
             }
         }
 
-        private void WeiterButton_Click(object sender, RoutedEventArgs e)
+        private async void WeiterButton_Click(object sender, RoutedEventArgs e)
         {
-            Speicherinterface.Download("https://raw.githubusercontent.com/lukasaldersley/UWPLeichtathlethik/master/README.md");//hier beim ersten start alle textdateien herunterladen
+            Speicherinterface.SaveToDocuments("README.txt","GENERAL",await Speicherinterface.Download("https://raw.githubusercontent.com/lukasaldersley/UWPLeichtathlethik/master/README.md"));
+            Debug.WriteLine("DONE WRITING PIEHDJGFASIOHIFGISDFISUFDGIUHZSDFIGAISFUAGSFGZ");
         }
     }
 }
